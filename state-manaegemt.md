@@ -112,3 +112,57 @@ const Home = () => {
 User login info
 Theme (dark/light)
 App settings
+
+
+Redux (Advanced State Management)
+🔹 Why Redux?
+
+When app becomes BIG:
+
+Many screens
+Complex data
+Multiple updates
+
+👉 Context becomes hard → Redux helps
+
+🔹 Core Concepts
+1. Store
+
+👉 Central place to store all data
+
+2. Actions
+
+👉 What you want to do
+
+{ type: "INCREMENT" }
+3. Reducer
+
+👉 How state changes
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    default:
+      return state;
+  }
+};
+4. Dispatch
+
+👉 Send action
+
+dispatch({ type: "INCREMENT" });
+📌 Flow Diagram
+Component → Dispatch → Action → Reducer → Store → UI update
+📌 Example (Simple Redux)
+const initialState = { count: 0 };
+
+function reducer(state = initialState, action) {
+  if (action.type === "ADD") {
+    return { count: state.count + 1 };
+  }
+  return state;
+}
+⚡ Redux Toolkit (Modern Way)
+
+👉 Easier than traditional Redux
