@@ -75,3 +75,40 @@ Dependency	Behavior
 []	run once
 [count]	run when count changes
 no array	run every render
+
+
+Context API (Global State)
+🔹 Problem:
+
+Passing data like this 👇 is messy:
+
+App → Screen → Component → Child → Child...
+
+👉 Called prop drilling
+
+🔹 Solution:
+
+Context API = share data globally
+
+📌 Step-by-Step Example
+Step 1: Create Context
+import React, { createContext } from 'react';
+
+export const UserContext = createContext();
+Step 2: Provide Data
+<UserContext.Provider value={{ name: "Shruti" }}>
+  <Home />
+</UserContext.Provider>
+Step 3: Use Data
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
+
+const Home = () => {
+  const { name } = useContext(UserContext);
+
+  return <Text>{name}</Text>;
+};
+⚡ Use Cases
+User login info
+Theme (dark/light)
+App settings
