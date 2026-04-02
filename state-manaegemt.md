@@ -42,3 +42,36 @@ Updating state → UI automatically re-renders
 Never change state directly:
 count = 5 ❌
 setCount(5) ✅
+
+
+useEffect (Side Effects)
+🔹 What it does:
+
+Runs code when something happens:
+
+Component loads
+State changes
+Props change
+📌 Syntax:
+useEffect(() => {
+  // code here
+}, [dependencies]);
+📌 Example (runs once on load):
+useEffect(() => {
+  console.log("App loaded");
+}, []);
+📌 Example (runs when count changes):
+useEffect(() => {
+  console.log("Count changed:", count);
+}, [count]);
+📌 Real Example (API call):
+useEffect(() => {
+  fetch("https://api.example.com/data")
+    .then(res => res.json())
+    .then(data => console.log(data));
+}, []);
+⚡ Key Idea
+Dependency	Behavior
+[]	run once
+[count]	run when count changes
+no array	run every render
