@@ -46,3 +46,37 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+Navigation Methods
+navigation.navigate('Details'); // go to screen
+navigation.goBack();           // go back
+navigation.push('Details');    // open same screen again
+navigation.replace('Home');    // replace current screen
+
+
+Tab Navigation (Bottom Tabs)
+🔹 Concept:
+
+Tabs at bottom like:
+
+Home | Profile | Settings
+📌 Example:
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
+
+👉 Used in:
+
+Instagram
+WhatsApp
+E-commerce apps
+
