@@ -80,3 +80,26 @@ Instagram
 WhatsApp
 E-commerce apps
 
+Drawer Navigation (Side Menu)
+🔹 Concept:
+
+Sidebar menu (hamburger menu ☰)
+
+📌 Example:
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
+    </Drawer.Navigator>
+  );
+}
+
+👉 Used in:
+
+Dashboard apps
+Admin panels
