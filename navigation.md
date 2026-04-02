@@ -103,3 +103,23 @@ function MyDrawer() {
 
 Dashboard apps
 Admin panels
+
+
+. Passing Data Between Screens
+📌 Sending data:
+navigation.navigate('Details', {
+  name: 'Shruti',
+  age: 21
+});
+📌 Receiving data:
+function DetailsScreen({ route }) {
+  const { name, age } = route.params;
+
+  return <Text>{name} - {age}</Text>;
+}
+🔁 7. Going Back with Data
+navigation.navigate({
+  name: 'Home',
+  params: { message: 'Hello from Details' },
+  merge: true,
+});
