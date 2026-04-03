@@ -64,3 +64,17 @@ axios.post("https://jsonplaceholder.typicode.com/posts", {
 })
 .then((res) => console.log(res.data))
 .catch((err) => console.log(err));
+
+
+Displaying API Data in UI 🎨
+Example (Card UI)
+return (
+  <div>
+    {data.map((item) => (
+      <div key={item.id} style={{border: "1px solid gray", margin: "10px"}}>
+        <h3>{item.title}</h3>
+        <p>{item.body}</p>
+      </div>
+    ))}
+  </div>
+);
