@@ -29,3 +29,8 @@ function App() {
 }
 
 export default App;
+
+
+Axios (Most Popular 🔥)
+
+👉 Axios is easier and cleaner than fetch.
