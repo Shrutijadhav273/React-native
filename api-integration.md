@@ -34,3 +34,33 @@ export default App;
 Axios (Most Popular 🔥)
 
 👉 Axios is easier and cleaner than fetch.
+
+GET Request with Axios
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <>
+      {data.map((item) => (
+        <p key={item.id}>{item.title}</p>
+      ))}
+    </>
+  );
+}
+✅ POST Request with Axios
+axios.post("https://jsonplaceholder.typicode.com/posts", {
+  title: "Hello",
+  body: "Axios POST",
+  userId: 1,
+})
+.then((res) => console.log(res.data))
+.catch((err) => console.log(err));
