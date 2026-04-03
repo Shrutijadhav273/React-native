@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Shrutijadhav273/React-native#readme",
   "dependencies": {
+    "axios": "^1.14.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
     "express": "^5.2.1",
