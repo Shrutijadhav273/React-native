@@ -17,8 +17,9 @@ const user = {
 
 
 // 🔐 LOGIN API
-app.post("/login", (req, res) => {
-  const { email, password } = req.body;
+app.get("/login", (req, res) => {
+  res.send("Use POST request to login");
+
 
   if (email === user.email && password === user.password) {
     const token = jwt.sign(
